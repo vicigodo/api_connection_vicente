@@ -10,7 +10,7 @@ class ReqresRepository {
   Future<List<PersonModel>> getPersonsPerPage(int page) async {
     List<PersonModel> myPersons = [];
 
-    http.Response? myResponse = await servicesReqResApi.getReqResService(page);
+    http.Response? myResponse = await servicesReqResApi.getReqResPERSONS(page);
 
     final responseBody = jsonDecode(myResponse!.body);
     print(responseBody);

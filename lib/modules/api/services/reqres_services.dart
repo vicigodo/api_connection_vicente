@@ -1,7 +1,7 @@
 import 'package:http/http.dart' as http;
 
 class ServicesReqResApi {
-  Future<http.Response?> getReqResService(int page) async {
+  Future<http.Response?> getReqResPERSONS(int page) async {
     // Una persona
     // String urlPerson = 'https://reqres.in/api/users/2';
 
