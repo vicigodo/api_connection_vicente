@@ -1,4 +1,5 @@
-import 'package:api_connection_vicente/modules/api/services/reqres_services.dart';
+import 'package:api_connection_vicente/modules/api/models/person_model.dart';
+import 'package:api_connection_vicente/modules/api/repository/reqres_repository.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,8 +14,15 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            ServicesReqResApi().getReqResService();
+          onPressed: () async {
+            // ServicesReqResApi().getReqResService(2);
+
+            ReqresRepository myInstace = ReqresRepository();
+
+            List<PersonModel> myPersonsInPage =
+                await myInstace.getPersonsPerPage(2);
+
+            print(myPersonsInPage.first.id);
           },
           child: Icon(Icons.add),
         ),
