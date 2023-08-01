@@ -26,18 +26,4 @@ class ReqresRepository {
 
     return myPersons;
   }
-   Future<PersonModel> getPerson() async {
-    PersonModel myPerson;
-
-    http.Response? myResponse = await servicesReqResApi.getReqResPERSON();
-
-    final responseBody = jsonDecode(myResponse!.body);
-    print(responseBody);
-    print(responseBody["id"]);
-
-    myPerson = responseBody;
-    
-
-    return myPerson;
-  }
 }
