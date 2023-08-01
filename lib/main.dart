@@ -1,5 +1,6 @@
 import 'package:api_connection_vicente/modules/api/models/person_model.dart';
 import 'package:api_connection_vicente/modules/api/repository/reqres_repository.dart';
+import 'package:api_connection_vicente/modules/api/repository/rescountries_repository.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,12 +18,14 @@ class MainApp extends StatelessWidget {
           onPressed: () async {
             // ServicesReqResApi().getReqResService(2);
 
-            ReqresRepository myInstace = ReqresRepository();
+            // ReqresRepository myInstace = ReqresRepository();
 
-            List<PersonModel> myPersonsInPage =
-                await myInstace.getPersonsPerPage(2);
+            // List<PersonModel> myPersonsInPage =
+            //     await myInstace.getPersonsPerPage(2);
 
-            print(myPersonsInPage.first.id);
+            // print(myPersonsInPage.first.id);
+
+            ResCoutriesRepository().getAllCountries();
           },
           child: Icon(Icons.add),
         ),
